@@ -1,0 +1,22 @@
+# Source files
+src/
+tsconfig.json
+.eslintrc.js
+
+# Development files
+*.spec.ts
+*.test.ts
+jest.config.js
+
+# Git files
+.git/
+.gitignore
+
+# CI/CD files
+.github/
+.travis.yml
+.circleci/
+
+# Documentation that's not needed in package
+docs/
+examples/
