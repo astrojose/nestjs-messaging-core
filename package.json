@@ -30,9 +30,9 @@
     "messaging",
     "rabbitmq",
     "typescript",
-    "absa"
+    "ipf"
   ],
-  "author": "ABSA Group <dev@absa.africa>",
+  "author": "astrojose",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/astrojose/nestjs-messaging-core/issues"

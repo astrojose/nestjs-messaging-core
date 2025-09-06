@@ -1,4 +1,4 @@
-# @absa/nestjs-messaging-core
+# @ipf/nestjs-messaging-core
 
 A robust, reusable messaging library for NestJS microservices with RabbitMQ support.
 
@@ -14,7 +14,7 @@ A robust, reusable messaging library for NestJS microservices with RabbitMQ supp
 ## Installation
 
 ```bash
-npm install @absa/nestjs-messaging-core
+npm install @ipf/nestjs-messaging-core
 ```
 
 ## Quick Start
@@ -24,7 +24,7 @@ npm install @absa/nestjs-messaging-core
 ```typescript
 import { Injectable, Inject } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
-import { BaseClient } from '@absa/nestjs-messaging-core';
+import { BaseClient } from '@ipf/nestjs-messaging-core';
 
 @Injectable()
 export class MyServiceClient extends BaseClient {
@@ -46,7 +46,7 @@ export class MyServiceClient extends BaseClient {
 
 ```typescript
 import { Module } from '@nestjs/common';
-import { CoreMessagingModule } from '@absa/nestjs-messaging-core';
+import { CoreMessagingModule } from '@ipf/nestjs-messaging-core';
 
 @Module({
   imports: [

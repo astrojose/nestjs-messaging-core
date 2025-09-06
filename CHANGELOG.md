@@ -3,7 +3,7 @@
 ## [1.0.0-beta.1] - 2025-09-07
 
 ### Added
-- Initial release of @absa/nestjs-messaging-core
+- Initial release of @ipf/nestjs-messaging-core
 - BaseClient with retry logic and timeout handling
 - CoreMessagingModule for dynamic RabbitMQ client registration
 - MessagingUtils for pattern creation and validation
