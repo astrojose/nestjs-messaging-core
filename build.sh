@@ -5,7 +5,7 @@
 
 set -e
 
-echo " Building @ipf/nestjs-messaging-core..."
+echo " Building @astrojose/nestjs-messaging-core..."
 
 # Navigate to the core directory
 cd "$(dirname "$0")"
@@ -17,7 +17,7 @@ rm -rf dist
 # Install dependencies if needed
 if [ ! -d "node_modules" ]; then
     echo "Installing dependencies..."
-    npm install
+    pnpm install
 fi
 
 # Build TypeScript

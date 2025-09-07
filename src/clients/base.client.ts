@@ -2,16 +2,7 @@ import { ClientProxy } from '@nestjs/microservices';
 import { TimeoutError, lastValueFrom } from 'rxjs';
 import { catchError, timeout, retry } from 'rxjs/operators';
 import { Logger } from '@nestjs/common';
-
-/**
- * Options for messaging operations like timeout and retry configuration.
- */
-export interface MessagingOptions {
-  /** Timeout in milliseconds for the operation */
-  timeoutMs?: number;
-  /** Number of retries to attempt */
-  retries?: number;
-}
+import { MessagingOptions } from '../interfaces/messaging-options.interface';
 
 /**
  * Abstract base client for all messaging clients.
@@ -66,7 +57,7 @@ export abstract class BaseClient {
    * @param options - Optional timeout and retry options
    * @returns Promise resolving to the response
    */
-  protected async send<TRequest, TResponse>(
+  public async send<TRequest, TResponse>(
     pattern: any,
     data: TRequest,
     options: MessagingOptions = {},
@@ -89,7 +80,7 @@ export abstract class BaseClient {
    * @param pattern - The event pattern
    * @param data - The event payload
    */
-  protected async emit<TEvent>(pattern: any, data: TEvent): Promise<void> {
+  public async emit<TEvent>(pattern: any, data: TEvent): Promise<void> {
     this.logger.debug(`Emitting event to pattern: ${JSON.stringify(pattern)}`);
     this.client.emit(pattern, data);
   }
@@ -123,14 +114,14 @@ export abstract class BaseClient {
    * Checks the health of the client connection.
    * @returns Promise resolving to true if healthy, false otherwise
    */
-  protected async healthCheck(): Promise<boolean> {
+  public async healthCheck(): Promise<boolean> {
     try {
       await this.client.connect();
       this.logger.debug('Client connection is healthy');
       return true;
     } catch (error) {
       this.logger.error(
-        `Client connection health check failed: ${error.message}`,
+        `Client connection health check failed`,
       );
       return false;
     }
